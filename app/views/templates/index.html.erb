@@ -1,0 +1,18 @@
+<div class="overflow-hidden bg-white shadow sm:rounded-lg w-full">
+  <div class="flex items-center justify-between px-4 py-5 sm:px-6">
+    <h3 class="text-lg font-medium leading-6 text-gray-900">Plantillas</h3>
+  </div>
+  <div class="border-t border-gray-200">
+    <dl>
+      <% @templates.each do |template| %>
+        <div class="<%= cycle("bg-gray-50", "bg-white") -%> px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <%= link_to template_users_path template do %>
+            <dt class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+              <%= template.name %>
+            </dt>
+          <% end %>
+        </div>
+      <% end %>
+    </dl>
+  </div>
+</div>

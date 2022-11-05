@@ -1,0 +1,25 @@
+<div class="overflow-hidden bg-white shadow sm:rounded-lg w-full">
+  <div class="flex items-center justify-between px-4 py-5 sm:px-6">
+    <h3 class="text-lg font-medium leading-6 text-gray-900"><%= @user.template.name %></h3>
+    <%= link_to "Editar datos", edit_user_path(@user), class: "ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700" %>
+  </div>
+  <div class="border-t border-gray-200">
+    <dl>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Link de usuario</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= slug_url @user.slug %></dd>
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Nombres y Apellidos</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= @user.name %></dd>
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Email</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= @user.email %></dd>
+      </div>
+      <% @user.records.each do |record| %>
+        <%= render "records/#{record.input_type}", record: %>
+      <% end %>
+    </dl>
+  </div>
+</div>

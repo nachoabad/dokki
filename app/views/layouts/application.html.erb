@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dokki</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="relative bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+          <div class="flex justify-start lg:w-0 lg:flex-1">
+            <%= link_to root_path do %>
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+            <% end %>
+          </div>
+          <div class="items-center justify-end md:flex md:flex-1 lg:w-0">
+            <%= button_to(
+              "Salir",
+              destroy_admin_session_path,
+              method: :delete,
+              class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+            ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container mx-auto mt-10 px-5 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>

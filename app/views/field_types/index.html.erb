@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Field types</h1>
+
+<div id="field_types">
+  <% @field_types.each do |field_type| %>
+    <%= render field_type %>
+    <p>
+      <%= link_to "Show this field type", field_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New field type", new_field_type_path %>
