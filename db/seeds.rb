@@ -1,6 +1,9 @@
   orgs = Org.create([{ name: "Acme SRL" }, { name: "Other Inc" }])
+  org = orgs.first
+
+  org.admins.create! email: "admin1@mail.com", password: "adminadmin", password_confirmation: "adminadmin"
   
-  template = orgs.first.templates.create(name: "Solicitud de Hipoteca")
+  template = org.templates.create(name: "Solicitud de Hipoteca")
 
   name = template.record_types.create(name: "Dirección de la propiedad", input_type: "text_field")
   name = template.record_types.create(name: "Precio de la propiedad", input_type: "text_field")
