@@ -14,7 +14,7 @@ class User < ApplicationRecord
   private
 
     def set_defaults
-      self.slug = SecureRandom.urlsafe_base64
+      self.slug = SecureRandom.urlsafe_base64(6)
     end
 
     def create_records
