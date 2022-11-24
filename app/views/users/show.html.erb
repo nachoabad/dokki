@@ -7,7 +7,13 @@
     <dl>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class="text-sm font-medium text-gray-500">Link de usuario</dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= slug_url @user.slug %></dd>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" data-controller="clipboard">
+          <span data-clipboard-target="source"><%= slug_url @user.slug %></span>
+          <a href="#" data-action="clipboard#copy"
+                      class="font-medium text-indigo-600 hover:text-indigo-500 px-3">
+            copiar
+          </a>
+        </dd>
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class="text-sm font-medium text-gray-500">Nombres y Apellidos</dt>
