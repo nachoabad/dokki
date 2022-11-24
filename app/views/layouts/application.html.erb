@@ -18,7 +18,8 @@
           <div class="flex justify-start lg:w-0 lg:flex-1">
             <%= link_to root_path do %>
               <span class="sr-only">Tu empresa</span>
-              <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+              <%= image_tag("logo.png", class: "h-8 w-auto sm:h-10", alt: "logo") %>
+              <!-- <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
             <% end %>
           </div>
           <div class="items-center justify-end md:flex md:flex-1 lg:w-0">
